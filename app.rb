@@ -21,4 +21,12 @@ class BuffyWiki < Sinatra::Base
 	get "/new-character" do
 		erb :'new'
 	end
+
+	get "/search" do
+		erb :'search'
+	end
+
+	get"/characters/buffy" do
+		erb :'buffy'
+	end
 end
