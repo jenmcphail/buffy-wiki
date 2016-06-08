@@ -1,14 +1,14 @@
-<form>
-	<input type="text" name="name" placeholder="name">
+<form method="GET" action="/characters">
+	<input type="text" name="character[name]" placeholder="name">
 	<br>
-	Season: S1<input type="checkbox" name="season"> S2<input type="checkbox" name="season" value="S2"> S3<input type="checkbox" name="season" value="S3"> S4<input type="checkbox" name="season" value="S4"> S5<input type="checkbox" name="season" value="S5"> S6<input type="checkbox" name="season" value="S6"> S7<input type="checkbox" name="season" value="S7">
+	Season: S1<input type="checkbox" name="character[season1]"> S2<input type="checkbox" name="character[season2]"> S3<input type="checkbox" name="character[season3]"> S4<input type="checkbox" name="character[season4]"> S5<input type="checkbox" name="character[season5]"> S6<input type="checkbox" name="character[season6]"> S7<input type="checkbox" name="character[season7]">
 	<br>
-	<select>
+	<select name="character[character_type]" value= <% @Character.character_type %>>
 		<option value="human">human</option>
 		<option value="vampire">vampire</option>
 		<option value="demon">demon</option>
 		<option value="other">other</option>
 	</select>
 	<br>
-	<input type="submit" name="submit" value="Search">
+	<input type="submit" name="submit" value="Add Character">
 </form>

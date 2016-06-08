@@ -1,0 +1,26 @@
+<form method="POST" action="/characters/<%= @character.id %>">
+	<input type="hidden"  name="_method" value="put">
+	name: <input type="text" name="character[name]" value= <%= @character.name %>>
+	<br>
+	image url: <input type="text" name="character[image_url]" value= <%= @character.image_url %>>
+	<br>
+	<br>
+	description: <textarea rows="10" cols="20" name="character[description]"><%= @character.description %></textarea>
+	<br>
+	Season: S1<input type="checkbox" name="character[season1]" <%= "checked" if @character.season1 %>> 
+	S2<input type="checkbox" name="character[season2]" <%= "checked" if @character.season2 %>> 
+	S3<input type="checkbox" name="character[season3]" <%= "checked" if @character.season3 %>> 
+	S4<input type="checkbox" name="character[season4]" <%= "checked" if @character.season4 %>> 
+	S5<input type="checkbox" name="character[season5]" <%= "checked" if @character.season5 %>> 
+	S6<input type="checkbox" name="character[season6]" <%= "checked" if @character.season6 %>> 
+	S7<input type="checkbox" name="character[season7]" <%= "checked" if @character.season7 %>>
+	<br>
+	type: <select name="character[character_type]">
+		<option <%= "selected" if @character.character_type =="human" %> value="human">human</option>
+		<option <%= "selected" if @character.character_type =="vampire" %> value="vampire">vampire</option>
+		<option <%= "selected" if @character.character_type =="demon" %> value="demon">demon</option>
+		<option <%= "selected" if @character.character_type =="other" %> value="other">other</option>
+	</select>
+	<br>
+	<input type="submit" name="submit" value="Update Character">
+</form>

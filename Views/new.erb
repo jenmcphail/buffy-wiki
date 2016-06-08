@@ -1,16 +1,14 @@
-<form>
-	<input type="text" name="name" placeholder="name">
+<form method="POST" action="/characters">
+	<input type="text" name="character[name]" placeholder="name">
 	<br>
-	<input type="text" name="image" placeholder="image url">
+	<input type="text" name="character[image_url]" placeholder="image url">
 	<br>
 	<br>
-	<textarea rows="10" cols="20" name="description" placeholder="description"></textarea>
+	<textarea rows="10" cols="20" name="character[description]" placeholder="description"></textarea>
 	<br>
-	<input type="text" name="defining moment" placeholder="defining moment (youtube url)">
+	Season: S1<input type="checkbox" name="character[season1]" value="true"> S2<input type="checkbox" name="character[season2]" value="true"> S3<input type="checkbox" name="character[season3]" value="true"> S4<input type="checkbox" name="character[season4]" value="true"> S5<input type="checkbox" name="character[season5]" value="true"> S6<input type="checkbox" name="character[season6]" value="true"> S7<input type="checkbox" name="character[season7]" value="true">
 	<br>
-	Season: S1<input type="checkbox" name="season"> S2<input type="checkbox" name="season" value="S2"> S3<input type="checkbox" name="season" value="S3"> S4<input type="checkbox" name="season" value="S4"> S5<input type="checkbox" name="season" value="S5"> S6<input type="checkbox" name="season" value="S6"> S7<input type="checkbox" name="season" value="S7">
-	<br>
-	<select>
+	<select name="character[character_type]">
 		<option value="human">human</option>
 		<option value="vampire">vampire</option>
 		<option value="demon">demon</option>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+<div><%= @character.name %></div>
+
+
+<img src= "<%= @character.image_url %>" style="width:228px;height:304px;">
+		<div>
+		<%= @character.name %>
+		<br>
+		<%= @character.character_type %>
+		<br>
+		<% if @character.season1 %>
+		S1
+		<% end %>
+		<% if @character.season2 %>
+		S2
+		<% end %>
+		<% if @character.season3 %>
+		S3
+		<% end %>
+		<% if @character.season4 %>
+		S4
+		<% end %>
+		<% if @character.season5 %>
+		S5
+		<% end %>
+		<% if @character.season6 %>
+		S6 
+		<% end %>
+		<% if @character.season7 %>
+		S7
+		<% end %>
+	</div>
+	<div>
+		About <%= @character.name %>
+		<br>
+		<textarea rows="20" cols="50" name="character[description]"><%= @character.description %></textarea>
+	</div>
+
+	
+	<form action="/characters/<%= @character.id %>/edit">
+    <input type="submit" value="Edit">
+	</form>
+	<br>
+	<form method="post" action="/characters/<%=@character.id %>">
+	<input type="hidden"  name="_method" value="delete">
+		<input type="submit" name="character[name]" value="Delete">
+	</form>
+
+</body>
+</html>

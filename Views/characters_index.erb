@@ -1,0 +1,34 @@
+<ul>
+	<% @characters.each do |character| %>
+		<li>
+			<a href="/characters/<%= character.id %>"><%= character.name %></a>
+			<ul>
+				<li>
+					<%= character.character_type %>
+					<% if character.season1 %>
+					<li>S1</li> 
+					<% end %>
+					<% if character.season2 %>
+					<li>S2</li> 
+					<% end %>
+					<% if character.season3 %>
+					<li>S3</li> 
+					<% end %>
+					<% if character.season4 %>
+					<li>S4</li> 
+					<% end %>
+					<% if character.season5 %>
+					<li>S5</li> 
+					<% end %>
+					<% if character.season6 %>
+					<li>S6</li> 
+					<% end %>
+					<% if character.season7 %>
+					<li>S7</li> 
+					<% end %>
+				</li>
+			</ul>
+		</li>
+		
+	<% end %>
+</ul>

@@ -4,6 +4,21 @@
 	<title>Buffy Wiki Homepage</title>
 </head>
 <body>
+	<div>
+		<form action="/characters">
+			<input type="submit" value="See All Characters">
+		</form>
+	</div>
+	<div>
+		<form action="/search">
+			<input type="submit" value="Search Characters">
+		</form>
+	</div>
+	<div>
+		<form action="/characters/new">
+			<input type="submit" value="Add a Character">
+		</form>
+	</div>
 	<%= yield %>
 </body>
 </html>
