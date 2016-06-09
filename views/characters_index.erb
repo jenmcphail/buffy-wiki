@@ -1,0 +1,53 @@
+<div class="dropdown"> 
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="/characters/type">Type</a></li>
+    <li><a href="/characters/votes">Popularity</a></li>
+    <li><a href="/characters">Alphabetical</a></li>
+  </ul>
+</div>
+
+
+<div class="row">
+	<% @characters.each do |character| %>
+		<div class="col-xs-4 col-sm-3 col-md-3">
+			<div class="thumbnail" id="indexThumbnails">
+				<a href="/characters/<%= character.id %>"><img src="<%= character.image_url %>" style="width:300px;height:275px;"></a>
+			</div>
+			<div class="caption">
+				<ul>
+					<li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
+					<li>
+						<%= character.character_type %>
+						<% if character.season1 %>
+						<li>S1</li> 
+						<% end %>
+						<% if character.season2 %>
+						<li>S2</li> 
+						<% end %>
+						<% if character.season3 %>
+						<li>S3</li> 
+						<% end %>
+						<% if character.season4 %>
+						<li>S4</li> 
+						<% end %>
+						<% if character.season5 %>
+						<li>S5</li> 
+						<% end %>
+						<% if character.season6 %>
+						<li>S6</li> 
+						<% end %>
+						<% if character.season7 %>
+						<li>S7</li> 
+						<% end %>
+					</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+	<% end %>
+</div>
