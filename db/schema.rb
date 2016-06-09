@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607181608) do
+ActiveRecord::Schema.define(version: 20160608184851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160607181608) do
     t.boolean  "season5",        default: false
     t.boolean  "season6",        default: false
     t.boolean  "season7",        default: false
+    t.integer  "votes",          default: 0
   end
 
 end

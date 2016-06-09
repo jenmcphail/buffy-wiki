@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Individual Character Page</title>
 </head>
 <body>
 	
@@ -42,7 +42,31 @@
 		<textarea rows="20" cols="50" name="character[description]"><%= @character.description %></textarea>
 	</div>
 
+<div class="votes container" id="votes">
+ 
+  	<div class="row container-fluid jumbotron" id="<%=@character.id%>">
+    <div class="col-md-1" id="arrows">
+      <form action="/characters/<%= @character.id%>/vote" method="post">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" class="btn" id="arrowUp">
+          <span class="glyphicon glyphicon-menu-up" id="<%=@character.id%>" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p id="votes">
+        <%= @character.votes %>
+      </p>
+      <form action="/characters/<%= @character.id%>/downvote" method="post">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" class="btn" id="arrowDown">
+          <span class="glyphicon glyphicon-menu-down" id="<%=@character.id%>" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+	</div>
 	
+</div>
+
+<div>
 	<form action="/characters/<%= @character.id %>/edit">
     <input type="submit" value="Edit">
 	</form>
@@ -51,6 +75,8 @@
 	<input type="hidden"  name="_method" value="delete">
 		<input type="submit" name="character[name]" value="Delete">
 	</form>
+</div>
+
 
 </body>
 </html>
