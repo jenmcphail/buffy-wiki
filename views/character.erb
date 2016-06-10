@@ -4,70 +4,16 @@
 	<title>Individual Character Page</title>
 </head>
 <body>
-<div class="thumbnail col-lg-4 col-sm-6">
-	<div class='imagecontainer2'>
-		<img src= "<%= @character.image_url %>" class="characterimage">
-	</div>
-		<div>
-		<h3 class="characterHeader"><%= @character.name %></h3>
-		<br>
-		<h6 class="characterHeader"><%= @character.character_type %></h6>
-		<br>
-		<% if @character.season1 %>
-		<h6 class="characterHeader list-inline">S1</h6>
-		<% end %>
-		<% if @character.season2 %>
-		<h6 class="characterHeader list-inline">S2</h6>
-		<% end %>
-		<% if @character.season3 %>
-		<h6 class="characterHeader list-inline">S3</h6>
-		<% end %>
-		<% if @character.season4 %>
-		<h6 class="characterHeader list-inline">S4</h6>
-		<% end %>
-		<% if @character.season5 %>
-		<h6 class="characterHeader list-inline">S5</h6>
-		<% end %>
-		<% if @character.season6 %>
-		<h6 class="characterHeader list-inline">S6</h6>
-		<% end %>
-		<% if @character.season7 %>
-		<h6 class="characterHeader list-inline">S7</h6>
-		<% end %>
-		</div>
-</div>
-	<div>
-		About <%= @character.name %>
-		<br>
-		<textarea rows="20" cols="50" name="character[description]"><%= @character.description %></textarea>
-	</div>
 
-<div class="votes container" id="votes">
- 
-  	<div class="row container-fluid jumbotron" id="<%=@character.id%>">
-    <div class="col-md-1" id="arrows">
-      <form action="/characters/<%= @character.id%>/vote" method="post">
-        <input type="hidden" name="_method" value="put">
-        <button type="submit" class="btn" id="arrowUp">
-          <span class="glyphicon glyphicon-menu-up" id="<%=@character.id%>" aria-hidden="true"></span>
-        </button>
-      </form>
-      <p id="votes">
-        <%= @character.votes %>
-      </p>
-      <form action="/characters/<%= @character.id%>/downvote" method="post">
-        <input type="hidden" name="_method" value="put">
-        <button type="submit" class="btn" id="arrowDown">
-          <span class="glyphicon glyphicon-menu-down" id="<%=@character.id%>" aria-hidden="true"></span>
-        </button>
-      </form>
-    </div>
-	</div>
-	
+<div class="button-div">
+<form method="post" action="/characters/<%=@character.id %>">
+	<input type="hidden"  name="_method" value="delete">
+		<input class="btn btn-danger delete" type="submit" name="character[name]" value="Delete">
+</form>
 </div>
 
-<div>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<div class="button-div">
+<button type="button" class="btn btn-warning edit" data-toggle="modal" data-target="#myModal">
   Edit
 </button>
 
@@ -84,27 +30,38 @@
       <div class="modal-body">
        <form role="form" method="POST" action="/characters/<%= @character.id %>">
 		<input type="hidden"  name="_method" value="put">
-			name: <input type="text" name="character[name]" value= <%= @character.name %>>
+			<fieldset class="form-group new" align="center">
+			Name: <input type="text" name="character[name]" value= <%= @character.name %>>
+			</fieldset>
 			<br>
-			image url: <input type="text" name="character[image_url]" value= <%= @character.image_url %>>
+			<fieldset class="form-group new" align="center">
+			Image URL: <input type="text" name="character[image_url]" value= <%= @character.image_url %>>
+			</fieldset>
 			<br>
-			description: <textarea rows="10" cols="20" name="character[description]"><%= @character.description %></textarea>
+			<fieldset class="form-group new" align="center">
+			Description:
 			<br>
-			Season: S1<input type="checkbox" name="character[season1]" <%= "checked" if @character.season1 %>> 
-			S2<input type="checkbox" name="character[season2]" <%= "checked" if @character.season2 %>> 
-			S3<input type="checkbox" name="character[season3]" <%= "checked" if @character.season3 %>> 
-			S4<input type="checkbox" name="character[season4]" <%= "checked" if @character.season4 %>> 
-			S5<input type="checkbox" name="character[season5]" <%= "checked" if @character.season5 %>> 
-			S6<input type="checkbox" name="character[season6]" <%= "checked" if @character.season6 %>> 
-			S7<input type="checkbox" name="character[season7]" <%= "checked" if @character.season7 %>>
+			<textarea rows="8" cols="40" name="character[description]"><%= @character.description %></textarea>
+			</fieldset>
 			<br>
-			type: <select name="character[character_type]">
+			<fieldset class="form-group new" align="center">
+			Season: S1 <input type="checkbox" name="character[season1]" <%= "checked" if @character.season1 %>> 
+			S2 <input type="checkbox" name="character[season2]" <%= "checked" if @character.season2 %>> 
+			S3 <input type="checkbox" name="character[season3]" <%= "checked" if @character.season3 %>> 
+			S4 <input type="checkbox" name="character[season4]" <%= "checked" if @character.season4 %>> 
+			S5 <input type="checkbox" name="character[season5]" <%= "checked" if @character.season5 %>> 
+			S6 <input type="checkbox" name="character[season6]" <%= "checked" if @character.season6 %>> 
+			S7 <input type="checkbox" name="character[season7]" <%= "checked" if @character.season7 %>>
+			</fieldset>
+			<br>
+			<fieldset class="form-group new" align="center">
+			Type: <select name="character[character_type]">
 				<option <%= "selected" if @character.character_type =="human" %> value="human">human</option>
 				<option <%= "selected" if @character.character_type =="vampire" %> value="vampire">vampire</option>
 				<option <%= "selected" if @character.character_type =="demon" %> value="demon">demon</option>
 				<option <%= "selected" if @character.character_type =="other" %> value="other">other</option>
 			</select>
-			<br>
+			</fieldset>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -114,10 +71,71 @@
     </div>
   </div>
 </div>
-	<form method="post" action="/characters/<%=@character.id %>">
-	<input type="hidden"  name="_method" value="delete">
-		<input type="submit" name="character[name]" value="Delete">
-	</form>
+</div>
+
+<div class= "container">
+<div class="thumbnail col-lg-4 col-sm-6">
+	<div class='imagecontainer2'>
+		<img src= "<%= @character.image_url %>" class="characterimage">
+	</div>
+		<div>
+		<h2 class="characterHeader"><%= @character.name %></h2></li>
+		<ul class="list-inline">
+			<li> <h5 class="characterHeader"><%= @character.character_type %></h5></li>
+			<br>
+			<% if @character.season1 %>
+			<li><h5 class="characterHeader list-inline">S1</h5></li>
+			<% end %>
+			<% if @character.season2 %>
+			<li><h5 class="characterHeader list-inline">S2</h5></li>
+			<% end %>
+			<% if @character.season3 %>
+			<li><h5 class="characterHeader list-inline">S3</h5></li>
+			<% end %>
+			<% if @character.season4 %>
+			<li><h5 class="characterHeader list-inline">S4</h5></li>
+			<% end %>
+			<% if @character.season5 %>
+			<li><h5 class="characterHeader list-inline">S5</h5></li>
+			<% end %>
+			<% if @character.season6 %>
+			<li><h5 class="characterHeader list-inline">S6</h5></li>
+			<% end %>
+			<% if @character.season7 %>
+			<li><h5 class="characterHeader list-inline">S7</h5></li>
+			<% end %>
+		</ul>
+		</div>
+</div>
+
+<div>
+	<h2 class= "characterIndexHeader">About <%= @character.name %></h2>
+	<br>
+	<br>
+	<textarea class= "characterTextArea" rows="8" cols="67" name="character[description]"><%= @character.description %></textarea>
+</div>
+
+<div class="votes container" id="votes">
+    <div class="col-md-1" id="arrows">
+      <form action="/characters/<%= @character.id%>/vote" method="post">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" class="btn" id="arrowUp">
+          <span class="glyphicon glyphicon-heart-empty" id="<%=@character.id%>" aria-hidden="true"></span>
+        </button>
+      </form>
+      <br>
+      <p id="votes">
+        <%= @character.votes %>
+      </p>
+      <br>
+      <form action="/characters/<%= @character.id%>/downvote" method="post">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" class="btn" id="arrowDown">
+          <span class="glyphicon glyphicon-minus-sign" id="<%=@character.id%>" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+</div>
 </div>
 
 

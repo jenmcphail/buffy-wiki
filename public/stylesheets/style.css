@@ -96,6 +96,75 @@
 	overflow-y: scroll;
 }
 
+.characterTextArea{
+	resize: none;
+	overflow-y: scroll;
+	margin-left: 50px;
+	display: inline;
+}
+
 .characterHeader{
 	margin-left: 10px;
 }
+
+.characterHeader{
+	margin-top: 50px;
+}
+
+.characterIndexHeader{
+	margin-left: 50px;
+	float: left;
+	display: block;
+}
+
+#arrows{
+	margin-left: 25px;
+	margin-top: 25px;
+	float: left;
+	display: block;
+}
+
+#votes{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.delete{
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+.edit{
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+.navbar{
+	margin: 0 auto;
+}
+
+.dropdown{
+	margin-top: 25px;
+}
+
+.button-div{
+	margin-top: 25px;
+
+}
+
+.error{
+	margin: 0 auto;
+	width: 458px;
+	text-align: center;
+}
+
+.errorImg{
+	border-radius: 15px;
+}
+
+.modal-body{
+	margin: 0 auto;
+}
+
