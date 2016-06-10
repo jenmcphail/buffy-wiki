@@ -4,38 +4,38 @@
 	<title>Individual Character Page</title>
 </head>
 <body>
-	
-<div><%= @character.name %></div>
-
-
-<img src= "<%= @character.image_url %>">
+<div class="thumbnail col-lg-4 col-sm-6">
+	<div class='imagecontainer2'>
+		<img src= "<%= @character.image_url %>" class="characterimage">
+	</div>
 		<div>
-		<%= @character.name %>
+		<h3 class="characterHeader"><%= @character.name %></h3>
 		<br>
-		<%= @character.character_type %>
+		<h6 class="characterHeader"><%= @character.character_type %></h6>
 		<br>
 		<% if @character.season1 %>
-		S1
+		<h6 class="characterHeader list-inline">S1</h6>
 		<% end %>
 		<% if @character.season2 %>
-		S2
+		<h6 class="characterHeader list-inline">S2</h6>
 		<% end %>
 		<% if @character.season3 %>
-		S3
+		<h6 class="characterHeader list-inline">S3</h6>
 		<% end %>
 		<% if @character.season4 %>
-		S4
+		<h6 class="characterHeader list-inline">S4</h6>
 		<% end %>
 		<% if @character.season5 %>
-		S5
+		<h6 class="characterHeader list-inline">S5</h6>
 		<% end %>
 		<% if @character.season6 %>
-		S6 
+		<h6 class="characterHeader list-inline">S6</h6>
 		<% end %>
 		<% if @character.season7 %>
-		S7
+		<h6 class="characterHeader list-inline">S7</h6>
 		<% end %>
-	</div>
+		</div>
+</div>
 	<div>
 		About <%= @character.name %>
 		<br>
@@ -67,10 +67,53 @@
 </div>
 
 <div>
-	<form action="/characters/<%= @character.id %>/edit">
-    <input type="submit" value="Edit">
-	</form>
-	<br>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalTitle">Edit <%=@character.name %></h4>
+      </div>
+      <div class="modal-body">
+       <form role="form" method="POST" action="/characters/<%= @character.id %>">
+		<input type="hidden"  name="_method" value="put">
+			name: <input type="text" name="character[name]" value= <%= @character.name %>>
+			<br>
+			image url: <input type="text" name="character[image_url]" value= <%= @character.image_url %>>
+			<br>
+			description: <textarea rows="10" cols="20" name="character[description]"><%= @character.description %></textarea>
+			<br>
+			Season: S1<input type="checkbox" name="character[season1]" <%= "checked" if @character.season1 %>> 
+			S2<input type="checkbox" name="character[season2]" <%= "checked" if @character.season2 %>> 
+			S3<input type="checkbox" name="character[season3]" <%= "checked" if @character.season3 %>> 
+			S4<input type="checkbox" name="character[season4]" <%= "checked" if @character.season4 %>> 
+			S5<input type="checkbox" name="character[season5]" <%= "checked" if @character.season5 %>> 
+			S6<input type="checkbox" name="character[season6]" <%= "checked" if @character.season6 %>> 
+			S7<input type="checkbox" name="character[season7]" <%= "checked" if @character.season7 %>>
+			<br>
+			type: <select name="character[character_type]">
+				<option <%= "selected" if @character.character_type =="human" %> value="human">human</option>
+				<option <%= "selected" if @character.character_type =="vampire" %> value="vampire">vampire</option>
+				<option <%= "selected" if @character.character_type =="demon" %> value="demon">demon</option>
+				<option <%= "selected" if @character.character_type =="other" %> value="other">other</option>
+			</select>
+			<br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">Update Character</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 	<form method="post" action="/characters/<%=@character.id %>">
 	<input type="hidden"  name="_method" value="delete">
 		<input type="submit" name="character[name]" value="Delete">

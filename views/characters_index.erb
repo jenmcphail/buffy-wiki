@@ -1,27 +1,31 @@
-<div class="dropdown"> 
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Sort
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="/characters/type">Type</a></li>
-    <li><a href="/characters/votes">Popularity</a></li>
-    <li><a href="/characters">Alphabetical</a></li>
-  </ul>
+<div class="container">
+	<div class="dropdown"> 
+ 	 <button id="sortDropdown" class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    	Sort Characters by
+    	<span class="caret"></span>
+  	</button>
+  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    	<li><a href="/characters/type">Type</a></li>
+    	<li><a href="/characters/votes">Popularity</a></li>
+    	<li><a href="/characters">Alphabetical</a></li>
+  	</ul>
+	</div>
 </div>
 
 
-<div class="row">
-	<% @characters.each do |character| %>
-		<div class="col-xs-4 col-sm-3 col-md-3">
-			<div class="thumbnail" id="indexThumbnails">
-				<a href="/characters/<%= character.id %>"><img src="<%= character.image_url %>" style="width:300px;height:275px;"></a>
-			</div>
-			<div class="caption">
-				<ul>
-					<li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
-					<li>
-						<%= character.character_type %>
+ 
+<div class="container">
+<% @characters.each do |character| %>
+	<div class="thumbnail col-lg-4 col-sm-6">
+	
+		<div class='imagecontainer'>
+  		<a href="/characters/<%= character.id %>"><img class="characterimage" src="<%= character.image_url %>" alt="<%= character.name %>" ></a>
+  		</div>
+  		<div class="charactertext">
+    		<a href="/characters/<%= character.id %>"><h4 class="card-title"><%= character.name %></h4></a>
+    		<p class="charactertextinner"><%= character.character_type %>
+    		<br>
+    			<ul class="list-inline" id= "seasontext">
 						<% if character.season1 %>
 						<li>S1</li> 
 						<% end %>
@@ -43,11 +47,10 @@
 						<% if character.season7 %>
 						<li>S7</li> 
 						<% end %>
-					</li>
-				</ul>
-				
-			</div>
-			
-		</div>
-	<% end %>
+    			</ul>
+    		</p>
+  		</div>
+	</div>
+	
+<% end %>
 </div>
