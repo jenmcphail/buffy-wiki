@@ -23,9 +23,12 @@ class BuffyWiki < Sinatra::Base
 		erb :'characters_index'
 	end
 
+
+	#GETs search results based on name / query
 	get '/characters/search' do
   		@characters = Character.search(params[:query])
   		erb :'characters_index'
+  		# redirect '/characters'
 	end
 
 	# GETs index page of characters ordered by votes
@@ -92,6 +95,7 @@ class BuffyWiki < Sinatra::Base
 		erb :'character'
 		#allow users to vote on characters using ajax functions. These votes will populate the popularity page.
 	end
+
 
 	#GETs the update form for a character
 	get "/characters/:id/edit" do

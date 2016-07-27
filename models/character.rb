@@ -1,4 +1,5 @@
 class Character < ActiveRecord::Base
+
 	validates :name, uniqueness: true, case_sensitive: false
 
 	def self.search(query)

@@ -1,0 +1,170 @@
+#indexThumbnails{
+	width: 200px;
+	height: 200px;
+	float: left;
+	clear: both;
+}
+
+#characterInfo{
+	margin-left: 50px;
+}
+
+.img-fluid{
+	max-width: 100%;
+	height: auto;
+}
+
+.character {
+	height: 500px;
+}
+
+
+.charactertext {
+	height: 100px;
+	overflow: auto;
+	margin-left: 15px;
+}
+
+.charactertextinner {
+	display: inline;
+}
+
+#seasontext {
+	display: inline;
+}
+
+.imagecontainer {
+	height: 300px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.imagecontainer2 {
+	height: 500px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.characterimage {
+ 	width: 100%;
+ 	height: auto;
+}
+
+#homepageImgs{
+	background-size: cover;
+}
+
+#sortDropdown{
+	margin-bottom: 20px
+}
+
+.formContainer{
+	width: 375px;
+	height: 600px;
+	background-color: light gray;
+	margin: 0 auto;
+}
+
+.new{
+	width: 375px;
+}
+
+.newForm{
+	width: 375px;
+	margin-bottom: 10px;
+}
+
+.formWindow{
+	padding: 50px;
+	height: 425px;
+	border: 2px solid gray;
+	border-radius: 20px;
+	width: 525px;
+	margin: 0 auto;
+	-webkit-box-shadow: 10px 12px 20px 0px rgba(0,0,0,0.55);
+	-moz-box-shadow: 10px 12px 20px 0px rgba(0,0,0,0.55);
+	box-shadow: 10px 12px 20px 0px rgba(0,0,0,0.55);
+}
+
+.newHeader{
+	margin: 50px;
+	text-align: center;
+}
+
+.newTextArea{
+	resize: none;
+	overflow-y: scroll;
+}
+
+.characterTextArea{
+	resize: none;
+	overflow-y: scroll;
+	margin-left: 50px;
+	display: inline;
+}
+
+.characterHeader{
+	margin-left: 10px;
+}
+
+.characterHeader{
+	margin-top: 50px;
+}
+
+.characterIndexHeader{
+	margin-left: 50px;
+	float: left;
+	display: block;
+}
+
+#arrows{
+	margin-left: 25px;
+	margin-top: 25px;
+	float: left;
+	display: block;
+}
+
+#votes{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.delete{
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+.edit{
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+.navbar{
+	margin: 0 auto;
+}
+
+.dropdown{
+	margin-top: 25px;
+}
+
+.button-div{
+	margin-top: 25px;
+
+}
+
+.error{
+	margin: 0 auto;
+	width: 458px;
+	text-align: center;
+}
+
+.errorImg{
+	border-radius: 15px;
+}
+
+.modal-body{
+	margin: 0 auto;
+}
+
