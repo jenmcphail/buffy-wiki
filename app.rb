@@ -15,8 +15,6 @@ class BuffyWiki < Sinatra::Base
 	get "/characters" do
 		@characters=Character.all.order(name: :asc)
 		erb :'characters_index'
-		#in characters_index create a form w/ options and ajax functionality that allows users to order the page based on name, season(s), type, and popularity - automatically submits
-		#possible to create multiple layouts in one page with erb?
 	end
 
 	#GETs index page of characters ordered alphabetically by character type
@@ -28,7 +26,6 @@ class BuffyWiki < Sinatra::Base
 	get '/characters/search' do
   		@characters = Character.search(params[:query])
   		erb :'characters_index'
-  		# redirect '/characters'
 	end
 
 	# GETs index page of characters ordered by votes

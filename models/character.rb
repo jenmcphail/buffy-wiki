@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-	validates :name, uniqueness: true, :case_sensitive => false
+	validates :name, uniqueness: true, case_sensitive: false
 
 	def self.search(query)
   		where("name LIKE ?", "%#{query.capitalize}%") 
