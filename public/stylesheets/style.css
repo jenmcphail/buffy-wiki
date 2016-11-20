@@ -167,11 +167,15 @@
 .modal-body{
 	margin: 0 auto;
 }
-
-.item{
+img{
+	width: auto;
+  height: 225px;
+  max-height: 225px;
+}
+/*.item{
 	width: 100%;
 	height: auto;
-}
+}*/
 
 body {
 	background-color: #000000;
