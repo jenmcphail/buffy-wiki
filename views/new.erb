@@ -6,23 +6,23 @@
 	<div class=formContainer>
 	<form method="POST" action="/characters" id="newForm">
 	  <fieldset class="form-group new" align="center">
-		Name:  <input type="text" name="character[name]" placeholder="name (first and last)">
+		<label>Name:</label>  <input type="text" name="character[name]" placeholder="name (first and last)">
 		<br>
 	  </fieldset>
 	  <fieldset class="form-group new" align="center">
-		Image URL:  <input type="text" name="character[image_url]" placeholder="image url">
+		<label>Image URL:</label>  <input type="text" name="character[image_url]" placeholder="image url">
 	  </fieldset>
 		<br>
 	  <fieldset class="form-group new" align="center">
-		Description:  <textarea class= "newTextArea" rows="5" cols="50" name="character[description]" placeholder="description"></textarea>
+		<label>Description:</label>  <textarea class= "newTextArea" rows="5" cols="50" name="character[description]" placeholder="description"></textarea>
 		<br>
 	  </fieldset>
 	  <fieldset class="form-group new" align="center">
-		Season:  S1 <input type="checkbox" name="character[season1]" value="true">  S2 <input type="checkbox" name="character[season2]" value="true">  S3 <input type="checkbox" name="character[season3]" value="true">  S4 <input type="checkbox" name="character[season4]" value="true">  S5 <input type="checkbox" name="character[season5]" value="true">  S6 <input type="checkbox" name="character[season6]" value="true"> S7 <input type="checkbox" name="character[season7]" value="true">
+		<label>Season:  S1</label> <input type="checkbox" name="character[season1]" value="true">  <label>S2</label> <input type="checkbox" name="character[season2]" value="true">  <label>S3</label> <input type="checkbox" name="character[season3]" value="true">  <label>S4</label> <input type="checkbox" name="character[season4]" value="true">  <label>S5</label> <input type="checkbox" name="character[season5]" value="true">  <label>S6</label> <input type="checkbox" name="character[season6]" value="true"> <label>S7</label> <input type="checkbox" name="character[season7]" value="true">
 		<br>
 	  </fieldset>
 	  <fieldset class="form-group new" align="center">
-		Type:  <select name="character[character_type]">
+		<label>Type:</label>  <select name="character[character_type]">
 			<option value="human">human</option>
 			<option value="vampire">vampire</option>
 			<option value="demon">demon</option>

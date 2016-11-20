@@ -61,7 +61,7 @@
 .formContainer{
 	width: 375px;
 	height: 600px;
-	background-color: light gray;
+	
 	margin: 0 auto;
 }
 
@@ -177,3 +177,12 @@ body {
 	background-color: #000000;
 	background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
+
+label{
+	color: white;
+}
+
+h2{
+	color: white;
+}
+
